@@ -83,8 +83,8 @@ void preencherDadosCSV(tDados_csv* dados[], int numLinhas) {
     exit(1);
   }
 
-  char linha[10000]; // Tamanho arbitrário para a linha
-  fgets(linha, sizeof(linha), arquivo); // Descarta a primeira linha do CSV (cabeçalho)
+  char linha[10000];
+  fgets(linha, sizeof(linha), arquivo); 
 
   for (int i = 0; i < numLinhas; i++) {
     if (fgets(linha, sizeof(linha), arquivo)) {
@@ -114,13 +114,138 @@ int main() {
 
   preencherDadosCSV(dados, numLinhas);
   
-  printf("Digite o indice a ser buscado\n");
+  /*printf("Digite o indice a ser buscado\n");
   scanf("%d", &indice);
-  imprimirStructEspecifica(dados, indice);
+  imprimirStructEspecifica(dados, indice);*/
 
+
+  float media_idade;
+  int cont;
+  for (int i = 0; i < 735; i++){
+    if (dados[i]->age > 0){
+      media_idade += dados[i]->age;
+      cont ++;
+    }
+  }
+  media_idade = media_idade / cont;
+  printf("A media das idades e: %f.\n", media_idade);
+
+  int cont_spotify = 0, cont_YTmusic = 0, cont_apple = 0, cont_pandora = 0, cont_other = 0, cont_DontUse = 0;
+  for (int i = 0; i < 735; i++){
+    if(strcmp("Spotify", dados[i]->streaming_service) == 0){
+      cont_spotify ++;
+    }
+    if(strcmp("YouTube Music", dados[i]->streaming_service) == 0){
+      cont_YTmusic ++;
+    }
+    else if(strcmp("Apple Music", dados[i]->streaming_service) == 0){
+      cont_apple ++;
+    }
+    else if(strcmp("Pandora", dados[i]->streaming_service) == 0){
+      cont_pandora ++;
+    }
+    else if(strcmp("Other streaming service", dados[i]->streaming_service) == 0){
+      cont_other ++;
+    }
+    else if(strcmp("I do not use a streaming service.", dados[i]->streaming_service) == 0){
+      cont_DontUse ++;
+    }
+  }
+  printf("\n");
+  printf("Contagem do uso dos Streamings\n");
+  printf("Spotify: %d\n", cont_spotify);
+  printf("Youtube Music: %d\n", cont_YTmusic);
+  printf("Apple Music: %d\n", cont_apple);
+  printf("Pandora: %d\n", cont_pandora);
+  printf("Other streaming service: %d\n", cont_other);
+  printf("Dont use streaming service: %d\n", cont_DontUse);
+  
   for (int i = 0; i < numLinhas; i++) {
     free(dados[i]);
   }
+ 
+  float leve = 0, mediano = 0, muito_tempo = 0;
+    int cont_leve = 0, cont_mediano = 0, cont_muito_tempo = 0;
 
+    for (int i = 0; i < numLinhas; i++) {
+        if (dados[i]->hours_per_day > 0) {
+            if (dados[i]->hours_per_day <= 2) {
+                leve += dados[i]->hours_per_day;
+                cont_leve++;
+            } else if (dados[i]->hours_per_day <= 5) {
+                mediano += dados[i]->hours_per_day;
+                cont_mediano++;
+            } else {
+                muito_tempo += dados[i]->hours_per_day;
+                cont_muito_tempo++;
+            }
+        }
+    }
+    
+float media_insonia_leve = 0, media_insonia_mediano = 0, media_insonia_muito_tempo = 0;
+    float media_depressao_leve = 0, media_depressao_mediano = 0, media_depressao_muito_tempo = 0;
+    float media_ansiedade_leve = 0, media_ansiedade_mediano = 0, media_ansiedade_muito_tempo = 0;
+    int cont_insonia_leve = 0, cont_insonia_mediano = 0, cont_insonia_muito_tempo = 0;
+    int cont_depressao_leve = 0, cont_depressao_mediano = 0, cont_depressao_muito_tempo = 0;
+    int cont_ansiedade_leve = 0, cont_ansiedade_mediano = 0, cont_ansiedade_muito_tempo = 0;
+
+    for (int i = 0; i < numLinhas; i++) {
+        if (dados[i]->hours_per_day > 0) {
+            if (dados[i]->hours_per_day <= 2) {
+                media_insonia_leve += dados[i]->insomnia;
+                media_depressao_leve += dados[i]->depression;
+                media_ansiedade_leve += dados[i]->anxiety;
+                cont_insonia_leve++;
+                cont_depressao_leve++;
+                cont_ansiedade_leve++;
+            } else if (dados[i]->hours_per_day <= 5) {
+                media_insonia_mediano += dados[i]->insomnia;
+                media_depressao_mediano += dados[i]->depression;
+                media_ansiedade_mediano += dados[i]->anxiety;
+                cont_insonia_mediano++;
+                cont_depressao_mediano++;
+                cont_ansiedade_mediano++;
+            } else {
+                media_insonia_muito_tempo += dados[i]->insomnia;
+                media_depressao_muito_tempo += dados[i]->depression;
+                media_ansiedade_muito_tempo += dados[i]->anxiety;
+                cont_insonia_muito_tempo++;
+                cont_depressao_muito_tempo++;
+                cont_ansiedade_muito_tempo++;
+            }
+        }
+    }
+
+    if (cont_insonia_leve > 0) {
+        media_insonia_leve /= cont_insonia_leve;
+        media_depressao_leve /= cont_depressao_leve;
+        media_ansiedade_leve /= cont_ansiedade_leve;
+    }
+    if (cont_insonia_mediano > 0) {
+        media_insonia_mediano /= cont_insonia_mediano;
+        media_depressao_mediano /= cont_depressao_mediano;
+        media_ansiedade_mediano /= cont_ansiedade_mediano;
+    }
+    if (cont_insonia_muito_tempo > 0) {
+        media_insonia_muito_tempo /= cont_insonia_muito_tempo;
+        media_depressao_muito_tempo /= cont_depressao_muito_tempo;
+        media_ansiedade_muito_tempo /= cont_ansiedade_muito_tempo;
+    }
+
+    printf("\nMédia da insônia, depressão e ansiedade para cada classificação de tempo:\n");
+    printf("Tempo leve (até 2 horas por dia):\n");
+      printf("- Média de insônia: %.2f\n", media_insonia_leve);
+    printf("- Média de depressão: %.2f\n", media_depressao_leve);
+    printf("- Média de ansiedade: %.2f\n", media_ansiedade_leve);
+
+    printf("Tempo mediano (mais de 2 horas e até 5 horas por dia):\n");
+    printf("- Média de insônia: %.2f\n", media_insonia_mediano);
+    printf("- Média de depressão: %.2f\n", media_depressao_mediano);
+    printf("- Média de ansiedade: %.2f\n", media_ansiedade_mediano);
+
+    printf("Tempo muito tempo (mais de 5 horas por dia):\n");
+    printf("- Média de insônia: %.2f\n", media_insonia_muito_tempo);
+    printf("- Média de depressão: %.2f\n", media_depressao_muito_tempo);
+    printf("- Média de ansiedade: %.2f\n", media_ansiedade_muito_tempo);
   return 0;
 }
