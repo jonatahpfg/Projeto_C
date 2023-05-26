@@ -247,5 +247,197 @@ float media_insonia_leve = 0, media_insonia_mediano = 0, media_insonia_muito_tem
     printf("- Média de insônia: %.2f\n", media_insonia_muito_tempo);
     printf("- Média de depressão: %.2f\n", media_depressao_muito_tempo);
     printf("- Média de ansiedade: %.2f\n", media_ansiedade_muito_tempo);
-  return 0;
+  
+  
+    /*2)ANÁLISE ESTILOS MUSICAIS MAIS RECORRENTES*/
+  
+int rock_depressao = 0;
+int latin_depressao = 0;
+int vgm_depressao = 0;
+int jazz_depressao = 0;
+int kpop_depressao = 0;
+int country_depressao = 0;
+int hiphop_depressao = 0;
+int rap_depressao = 0;
+int classical_depressao = 0;
+int pop_depressao = 0;
+int gospel_depressao = 0;
+
+for (int i = 0; i < numLinhas; i++) {
+    if (dados[i]->depression > 6) {
+        if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
+            rock_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
+            latin_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
+            vgm_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
+            jazz_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
+            kpop_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+            country_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
+            hiphop_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
+            rap_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
+            classical_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
+            pop_depressao++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
+            gospel_depressao++;
+        }
+    }
+}
+
+int rock_ansiedade = 0;
+int latin_ansiedade = 0;
+int vgm_ansiedade = 0;
+int jazz_ansiedade = 0;
+int kpop_ansiedade = 0;
+int country_ansiedade = 0;
+int hiphop_ansiedade = 0;
+int rap_ansiedade = 0;
+int classical_ansiedade = 0;
+int pop_ansiedade = 0;
+int gospel_ansiedade = 0;
+
+for (int i = 0; i < numLinhas; i++) {
+    if (dados[i]->anxiety > 6) {
+        if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
+            rock_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
+            latin_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
+            vgm_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
+            jazz_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
+            kpop_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+            country_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
+            hiphop_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
+            rap_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
+            classical_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
+            pop_ansiedade++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
+            gospel_ansiedade++;
+        }
+    }
+}
+  
+int rock_insonia = 0;
+int latin_insonia = 0;
+int vgm_insonia = 0;
+int jazz_insonia = 0;
+int kpop_insonia = 0;
+int country_insonia = 0;
+int hiphop_insonia = 0;
+int rap_insonia = 0;
+int classical_insonia = 0;
+int pop_insonia = 0;
+int gospel_insonia = 0;
+
+for (int i = 0; i < numLinhas; i++) {
+    if (dados[i]->insomnia > 6) {
+        if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
+            rock_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
+            latin_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
+            vgm_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
+            jazz_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
+            kpop_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+            country_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
+            hiphop_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
+            rap_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
+            classical_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
+            pop_insonia++;
+        }
+        else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
+            gospel_insonia++;
+        }
+    }
+}
+printf("\n");
+printf("Depressão por gênero musical:\n");
+printf("Rock: %d\n", rock_depressao);
+printf("Latin: %d\n", latin_depressao);
+printf("Video game music: %d\n", vgm_depressao);
+printf("Jazz: %d\n", jazz_depressao);
+printf("K pop: %d\n", kpop_depressao);
+printf("Country: %d\n", country_depressao);
+printf("Hip hop: %d\n", hiphop_depressao);
+printf("Rap: %d\n", rap_depressao);
+printf("Classical: %d\n", classical_depressao);
+printf("Pop: %d\n", pop_depressao);
+printf("Gospel: %d\n", gospel_depressao);
+printf("\n");
+printf("Insônia por gênero musical:\n");
+printf("Rock: %d\n", rock_insonia);
+printf("Latin: %d\n", latin_insonia);
+printf("Video game music: %d\n", vgm_insonia);
+printf("Jazz: %d\n", jazz_insonia);
+printf("K pop: %d\n", kpop_insonia);
+printf("Country: %d\n", country_insonia);
+printf("Hip hop: %d\n", hiphop_insonia);
+printf("Rap: %d\n", rap_insonia);
+printf("Classical: %d\n", classical_insonia);
+printf("Pop: %d\n", pop_insonia);
+printf("Gospel: %d\n", gospel_insonia);
+printf("\n");
+printf("Ansiedade por gênero musical:\n");
+printf("Rock: %d\n", rock_ansiedade);
+printf("Latin: %d\n", latin_ansiedade);
+printf("Video game music: %d\n", vgm_ansiedade);
+printf("Jazz: %d\n", jazz_ansiedade);
+printf("K pop: %d\n", kpop_ansiedade);
+printf("Country: %d\n", country_ansiedade);
+printf("Hip hop: %d\n", hiphop_ansiedade);
+printf("Rap: %d\n", rap_ansiedade);
+printf("Classical: %d\n", classical_ansiedade);
+printf("Pop: %d\n", pop_ansiedade);
+printf("Gospel: %d\n", gospel_ansiedade);
+ return 0;
 }
