@@ -439,5 +439,105 @@ printf("Rap: %d\n", rap_ansiedade);
 printf("Classical: %d\n", classical_ansiedade);
 printf("Pop: %d\n", pop_ansiedade);
 printf("Gospel: %d\n", gospel_ansiedade);
+  
+/*3)ANÁLISE relação da música na saúde mental*/
+
+float media_ansiedade_no_effect = 0, media_ansiedade_improve = 0, media_ansiedade_worsen = 0;
+float media_depressao_no_effect = 0, media_depressao_improve = 0, media_depressao_worsen = 0;
+float media_insonia_no_effect = 0, media_insonia_improve = 0, media_insonia_worsen = 0;
+int cont_no_effect = 0, cont_improve = 0, cont_worsen = 0;
+
+for (int i = 0; i < numLinhas; i++) {
+  if (strcmp("No effect", dados[i]->music_effects) == 0) {
+    media_ansiedade_no_effect += dados[i]->anxiety;
+    media_depressao_no_effect += dados[i]->depression;
+    media_insonia_no_effect += dados[i]->insomnia;
+    cont_no_effect++;
+  } else if (strcmp("Improve", dados[i]->music_effects) == 0) {
+    media_ansiedade_improve += dados[i]->anxiety;
+    media_depressao_improve += dados[i]->depression;
+    media_insonia_improve += dados[i]->insomnia;
+    cont_improve++;
+  } else if (strcmp("Worsen", dados[i]->music_effects) == 0) {
+    media_ansiedade_worsen += dados[i]->anxiety;
+    media_depressao_worsen += dados[i]->depression;
+    media_insonia_worsen += dados[i]->insomnia;
+    cont_worsen++;
+  }
+}
+
+if (cont_no_effect > 0) {
+  media_ansiedade_no_effect /= cont_no_effect;
+  media_depressao_no_effect /= cont_no_effect;
+  media_insonia_no_effect /= cont_no_effect;
+}
+
+if (cont_improve > 0) {
+  media_ansiedade_improve /= cont_improve;
+  media_depressao_improve /= cont_improve;
+  media_insonia_improve /= cont_improve;
+}
+
+if (cont_worsen > 0) {
+  media_ansiedade_worsen /= cont_worsen;
+  media_depressao_worsen /= cont_worsen;
+  media_insonia_worsen /= cont_worsen;
+}
+
+printf("\nMédia da ansiedade, depressão e insônia para cada classificação de efeito musical:\n");
+printf("No effect:\n");
+printf("- Média de ansiedade: %.2f\n", media_ansiedade_no_effect);
+printf("- Média de depressão: %.2f\n", media_depressao_no_effect);
+printf("- Média de insônia: %.2f\n", media_insonia_no_effect);
+
+printf("Improve:\n");
+printf("- Média de ansiedade: %.2f\n", media_ansiedade_improve);
+printf("- Média de depressão: %.2f\n", media_depressao_improve);
+printf("- Média de insônia: %.2f\n", media_insonia_improve);
+
+printf("Worsen:\n");
+printf("- Média de ansiedade: %.2f\n", media_ansiedade_worsen);
+printf("- Média de depressão: %.2f\n", media_depressao_worsen);
+printf("- Média de insônia: %.2f\n", media_insonia_worsen);
+
+float media_tempo_no_effect=0, media_tempo_improve = 0, media_tempo_worsen = 0;
+float cont_tempo_no_effect = 0, cont_tempo_improve= 0, cont_tempo_worsen = 0;
+
+for (int i = 0; i < numLinhas; i++) {
+  if (strcmp("No effect", dados[i]->music_effects) == 0) {
+    media_tempo_no_effect += dados[i]->hours_per_day;
+    cont_tempo_no_effect++;}
+  else if (strcmp("Improve", dados[i]->music_effects) == 0) {
+    media_tempo_improve += dados[i]->hours_per_day;
+    cont_tempo_improve++;}
+  else if (strcmp("Worsen", dados[i]->music_effects)== 0){
+    media_tempo_worsen += dados[i]-> hours_per_day;
+    cont_tempo_worsen++;
+  }  
+}
+  
+printf("\nMédia de tempo para cada grupo(Os que acreditam que faz efeito, os acreditam que piora e os que acreditam que não tem efeito.\n");
+ if (cont_tempo_no_effect > 0) {
+    media_tempo_no_effect /= cont_tempo_no_effect;
+    int horas = (int)media_tempo_no_effect;
+    int minutos = (int)((media_tempo_no_effect - horas) * 60);
+    printf("\nSem efeito:\n- Média de tempo: %d h %02d min\n", horas, minutos);
+  }
+
+  if (cont_tempo_improve > 0) {
+    media_tempo_improve /= cont_tempo_improve;
+    int horas = (int)media_tempo_improve;
+    int minutos = (int)((media_tempo_improve - horas) * 60);
+    printf("Efeito Positivo:\n- Média de tempo: %d h %02d min\n", horas, minutos);
+  }
+
+  if (cont_tempo_worsen > 0) {
+    media_tempo_worsen /= cont_tempo_worsen;
+    int horas = (int)media_tempo_worsen;
+    int minutos = (int)((media_tempo_worsen - horas) * 60);
+    printf("Efeito Negativo:\n- Média de tempo: %d h %02d min\n", horas, minutos);
+  }
+
+
  return 0;
 }
