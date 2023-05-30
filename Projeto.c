@@ -163,7 +163,8 @@ int main() {
   for (int i = 0; i < numLinhas; i++) {
     free(dados[i]);
   }
- 
+   
+  /*1)ANALISE RELAÇÃO TEMPO POR SAÚDE MENTAL*/
   float leve = 0, mediano = 0, muito_tempo = 0;
     int cont_leve = 0, cont_mediano = 0, cont_muito_tempo = 0;
 
@@ -247,8 +248,8 @@ float media_insonia_leve = 0, media_insonia_mediano = 0, media_insonia_muito_tem
     printf("- Média de insônia: %.2f\n", media_insonia_muito_tempo);
     printf("- Média de depressão: %.2f\n", media_depressao_muito_tempo);
     printf("- Média de ansiedade: %.2f\n", media_ansiedade_muito_tempo);
-  
-  
+
+
     /*2)ANÁLISE ESTILOS MUSICAIS MAIS RECORRENTES*/
   
 int rock_depressao = 0;
@@ -314,7 +315,7 @@ int pop_ansiedade = 0;
 int gospel_ansiedade = 0;
 
 for (int i = 0; i < numLinhas; i++) {
-    if (dados[i]->anxiety > 6) {
+    if (dados[i]->anxiety >  6) {
         if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
             rock_ansiedade++;
         }
@@ -364,7 +365,7 @@ int pop_insonia = 0;
 int gospel_insonia = 0;
 
 for (int i = 0; i < numLinhas; i++) {
-    if (dados[i]->insomnia > 6) {
+    if (dados[i]->insomnia >  6) {
         if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
             rock_insonia++;
         }
@@ -439,7 +440,7 @@ printf("Rap: %d\n", rap_ansiedade);
 printf("Classical: %d\n", classical_ansiedade);
 printf("Pop: %d\n", pop_ansiedade);
 printf("Gospel: %d\n", gospel_ansiedade);
-  
+
 /*3)ANÁLISE relação da música na saúde mental*/
 
 float media_ansiedade_no_effect = 0, media_ansiedade_improve = 0, media_ansiedade_worsen = 0;
@@ -550,7 +551,13 @@ int rap_idade_media = 0;
 int classical_idade_media = 0;
 int pop_idade_media = 0;
 int gospel_idade_media = 0;
+int edm_idade_media = 0;
+int metal_idade_media = 0;
+int rb_idade_media = 0;
+int folk_idade_media = 0;
+int lofi_idade_media = 0;
 
+  
 int rock_count = 0;
 int latin_count = 0;
 int vgm_count = 0;
@@ -562,11 +569,37 @@ int rap_count = 0;
 int classical_count = 0;
 int pop_count = 0;
 int gospel_count = 0;
+int edm_count =0;
+int metal_count = 0;
+int rb_count =0; 
+int folk_count = 0;
+int lofi_count = 0;
+  
   
   for (int i = 0; i < numLinhas; i++) {
     if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
       rock_idade_media += dados[i]->age;
       rock_count++;
+      }
+      else if (strcmp(dados[i]->fav_genre, "Lofi") == 0) {
+      lofi_idade_media += dados[i]->age;
+      lofi_count++;
+      }
+        else if (strcmp(dados[i]->fav_genre, "R&B") == 0) {
+      rb_idade_media += dados[i]->age;
+      rb_count++;
+      }
+      else if (strcmp(dados[i]->fav_genre, "Metal") == 0) {
+      metal_idade_media += dados[i]->age;
+      metal_count++;
+      }
+        else if (strcmp(dados[i]->fav_genre, "Folk") == 0) {
+      folk_idade_media += dados[i]->age;
+      folk_count++;
+      }
+          else if (strcmp(dados[i]->fav_genre, "EDM") == 0) {
+      edm_idade_media += dados[i]->age;
+      edm_count++;
       }
     else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
       latin_idade_media += dados[i]->age;
@@ -609,6 +642,11 @@ int gospel_count = 0;
       gospel_count++;
       }
   }
+    lofi_idade_media/= lofi_count;
+    edm_idade_media/= edm_count;
+   metal_idade_media/= metal_count;
+  folk_idade_media/=folk_count;
+  rb_idade_media/= rb_count;
     rock_idade_media /= rock_count;
     latin_idade_media /= latin_count;
     vgm_idade_media /= vgm_count;
@@ -634,6 +672,11 @@ printf("Rap: %d\n", rap_count);
 printf("Classical: %d\n", classical_count);
 printf("Pop: %d\n", pop_count);
 printf("Gospel: %d\n", gospel_count);
+printf("Metal: %d\n", metal_count);
+printf("Lofi: %d\n", lofi_count);
+printf("Folk: %d\n", folk_count);
+printf("R&B: %d\n", rb_count);
+printf("EDM: %d\n", edm_count);
 printf("\n");
 
 printf("\n");
@@ -649,6 +692,11 @@ printf("Rap: %d\n", rap_idade_media);
 printf("Classical: %d\n", classical_idade_media);
 printf("Pop: %d\n", pop_idade_media);
 printf("Gospel: %d\n", gospel_idade_media);
+printf("Metal: %d\n", metal_idade_media);
+printf("Lofi: %d\n", lofi_idade_media);
+printf("Folk: %d\n", folk_idade_media);
+printf("R&B: %d\n", rb_idade_media);
+printf("EDM: %d\n", edm_idade_media);
 printf("\n");
 
 
@@ -859,6 +907,7 @@ if (lofi_countt > 0) {
 if (gospel_countt > 0) {
     media_gospel_insomnia /= gospel_countt;
     printf("Média de insônia para o gênero Gospel: %.2f\n", media_gospel_insomnia);
-}
- return 0;
+}  
+return 0;
+  
 }
