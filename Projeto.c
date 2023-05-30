@@ -537,7 +537,328 @@ printf("\nMédia de tempo para cada grupo(Os que acreditam que faz efeito, os ac
     int minutos = (int)((media_tempo_worsen - horas) * 60);
     printf("Efeito Negativo:\n- Média de tempo: %d h %02d min\n", horas, minutos);
   }
+  /*5)A IDADE PODE INFLUENCIAR NOS GOSTOS MUSICAIS*/
+
+int rock_idade_media = 0;
+int latin_idade_media = 0;
+int vgm_idade_media = 0;
+int jazz_idade_media = 0;
+int kpop_idade_media = 0;
+int country_idade_media = 0;
+int hiphop_idade_media = 0;
+int rap_idade_media = 0;
+int classical_idade_media = 0;
+int pop_idade_media = 0;
+int gospel_idade_media = 0;
+
+int rock_count = 0;
+int latin_count = 0;
+int vgm_count = 0;
+int jazz_count = 0;
+int kpop_count = 0;
+int country_count = 0;
+int hiphop_count = 0;
+int rap_count = 0;
+int classical_count = 0;
+int pop_count = 0;
+int gospel_count = 0;
+  
+  for (int i = 0; i < numLinhas; i++) {
+    if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
+      rock_idade_media += dados[i]->age;
+      rock_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
+      latin_idade_media += dados[i]->age;
+      latin_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
+      vgm_idade_media += dados[i]->age;
+      vgm_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
+      jazz_idade_media += dados[i]->age;
+      jazz_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
+      kpop_idade_media += dados[i]->age;
+      kpop_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+      country_idade_media += dados[i]->age;
+      country_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
+      hiphop_idade_media += dados[i]->age;
+      hiphop_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
+      rap_idade_media += dados[i]->age;
+      rap_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
+      classical_idade_media += dados[i]->age;
+      classical_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
+      pop_idade_media += dados[i]->age;
+      pop_count++;
+      }
+    else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
+      gospel_idade_media += dados[i]->age;
+      gospel_count++;
+      }
+  }
+    rock_idade_media /= rock_count;
+    latin_idade_media /= latin_count;
+    vgm_idade_media /= vgm_count;
+    jazz_idade_media /= jazz_count;
+    kpop_idade_media /= kpop_count;
+    country_idade_media /= country_count;
+    hiphop_idade_media /= hiphop_count;
+    rap_idade_media /= rap_count;
+    classical_idade_media /= classical_count;
+    pop_idade_media /= pop_count;
+    gospel_idade_media /= gospel_count;
+
+printf("\n");
+printf("Quantidade por gênero:\n");
+printf("Rock: %d\n", rock_count);
+printf("Latin: %d\n", latin_count);
+printf("Video game music: %d\n", vgm_count);
+printf("Jazz: %d\n", jazz_count);
+printf("K pop: %d\n", kpop_count);
+printf("Country: %d\n", country_count);
+printf("Hip hop: %d\n", hiphop_count);
+printf("Rap: %d\n", rap_count);
+printf("Classical: %d\n", classical_count);
+printf("Pop: %d\n", pop_count);
+printf("Gospel: %d\n", gospel_count);
+printf("\n");
+
+printf("\n");
+printf("Média de idades por gênero:\n");
+printf("Rock: %d\n", rock_idade_media);
+printf("Latin: %d\n", latin_idade_media);
+printf("Video game music: %d\n", vgm_idade_media);
+printf("Jazz: %d\n", jazz_idade_media);
+printf("K pop: %d\n", kpop_idade_media);
+printf("Country: %d\n", country_idade_media);
+printf("Hip hop: %d\n", hiphop_idade_media);
+printf("Rap: %d\n", rap_idade_media);
+printf("Classical: %d\n", classical_idade_media);
+printf("Pop: %d\n", pop_idade_media);
+printf("Gospel: %d\n", gospel_idade_media);
+printf("\n");
 
 
+/*Parte 6, relações de BPM a insônia*/
+int cont_insomnia_menor_3 = 0, cont_insomnia_menor_7 = 0, cont_insomnia_menor_10 = 0;
+float  media_bpm_menor_3 = 0, media_bpm_menor_7 = 0, media_bpm_menor_10 = 0;
+  
+for (int i = 0; i < numLinhas; i++){
+  if(dados[i]->bpm >=20 && dados[i]->bpm < 300){
+    if(dados[i]->insomnia>= 0){
+      if(dados[i]->insomnia <= 3){
+        media_bpm_menor_3 += dados[i]->bpm;
+        cont_insomnia_menor_3 ++;
+      }
+      else if(dados[i]->insomnia <= 7){
+        media_bpm_menor_7 += dados[i]->bpm;
+        cont_insomnia_menor_7 ++;
+      }
+      else if(dados[i]->insomnia <= 10){
+        media_bpm_menor_10 += dados[i]->bpm;
+        cont_insomnia_menor_10 ++;
+      }
+    }
+  }
+}
+if (cont_insomnia_menor_3 > 0) {
+  media_bpm_menor_3 = media_bpm_menor_3 / cont_insomnia_menor_3;
+}
+
+if (cont_insomnia_menor_7 > 0) {
+  media_bpm_menor_7 = media_bpm_menor_7 / cont_insomnia_menor_7;
+}
+
+if (cont_insomnia_menor_10 > 0) {
+  media_bpm_menor_10 = media_bpm_menor_10 / cont_insomnia_menor_10;
+}
+
+printf("\n");
+printf("Media do BPM para niveis de insonia ate 3: %.2f\n", media_bpm_menor_3);
+printf("Media do BPM para niveis de insonia de 4 a 7: %.2f\n", media_bpm_menor_7);
+printf("Media do BPM para niveis de insonia de 8 a 10: %.2f\n", media_bpm_menor_10);
+
+float media_rock_insomnia = 0, media_latin_insomnia = 0, media_vgm_insomnia = 0, media_jazz_insomnia = 0;
+float media_rb_insomnia = 0, media_kpop_insomnia = 0, media_country_insomnia = 0, media_edm_insomnia = 0;
+float media_hiphop_insomnia = 0, media_rap_insomnia = 0, media_pop_insomnia = 0, media_classical_insomnia = 0;
+float media_metal_insomnia = 0, media_folk_insomnia = 0, media_lofi_insomnia = 0, media_gospel_insomnia = 0;
+
+int rock_countt = 0;
+int latin_countt = 0;
+int vgm_countt = 0;
+int jazz_countt = 0;
+int kpop_countt = 0;
+int country_countt = 0;
+int hiphop_countt = 0;
+int rap_countt = 0;
+int classical_countt = 0;
+int pop_countt = 0;
+int gospel_countt = 0;
+int  folk_countt = 0;
+int  rb_countt = 0;
+int edm_countt = 0;
+int metal_countt = 0;
+int lofi_countt = 0;
+
+  
+for (int i = 0; i < numLinhas; i++) {
+  if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
+    media_rock_insomnia += dados[i]->insomnia;
+    rock_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
+    media_latin_insomnia += dados[i]->insomnia;
+    latin_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
+    media_vgm_insomnia += dados[i]->insomnia;
+    vgm_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
+    media_jazz_insomnia += dados[i]->insomnia;
+    jazz_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "R&B") == 0) {
+    media_rb_insomnia += dados[i]->insomnia;
+    rb_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
+    media_kpop_insomnia += dados[i]->insomnia;
+    kpop_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+    media_country_insomnia += dados[i]->insomnia;
+    country_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "EDM") == 0) {
+    media_edm_insomnia += dados[i]->insomnia;
+    edm_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
+    media_hiphop_insomnia += dados[i]->insomnia;
+    hiphop_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
+    media_pop_insomnia += dados[i]->insomnia;
+    pop_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
+    media_rap_insomnia += dados[i]->insomnia;
+    rap_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
+    media_classical_insomnia += dados[i]->insomnia;
+    classical_countt ++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Metal") == 0) {
+    media_metal_insomnia += dados[i]->insomnia;
+    metal_countt ++;
+  }
+  else if (strcmp(dados[i]->fav_genre, "Folk") == 0) {
+    media_folk_insomnia += dados[i]->insomnia;
+    folk_countt ++;
+  }
+  else if (strcmp(dados[i]->fav_genre, "Lofi") == 0) {
+    media_lofi_insomnia += dados[i]->insomnia;
+    lofi_countt ++;
+  }
+  else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
+    media_gospel_insomnia += dados[i]->insomnia;
+    gospel_countt ++;
+  }
+}
+printf("\n");
+if (rock_countt > 0) {
+    media_rock_insomnia /= rock_countt;
+    printf("Média de insônia para o gênero Rock: %.2f\n", media_rock_insomnia);
+}
+
+if (latin_countt > 0) {
+    media_latin_insomnia /= latin_countt;
+    printf("Média de insônia para o gênero Latin: %.2f\n", media_latin_insomnia);
+}
+
+if (vgm_countt > 0) {
+    media_vgm_insomnia /= vgm_countt;
+    printf("Média de insônia para o gênero Video game music: %.2f\n", media_vgm_insomnia);
+}
+
+if (jazz_countt > 0) {
+    media_jazz_insomnia /= jazz_countt;
+    printf("Média de insônia para o gênero Jazz: %.2f\n", media_jazz_insomnia);
+}
+
+if (rb_countt > 0) {
+    media_rb_insomnia /= rb_countt;
+    printf("Média de insônia para o gênero R&B: %.2f\n", media_rb_insomnia);
+}
+
+if (kpop_countt > 0) {
+    media_kpop_insomnia /= kpop_countt;
+    printf("Média de insônia para o gênero K pop: %.2f\n", media_kpop_insomnia);
+}
+
+if (country_countt > 0) {
+    media_country_insomnia /= country_countt;
+    printf("Média de insônia para o gênero Country: %.2f\n", media_country_insomnia);
+}
+
+if (edm_countt > 0) {
+    media_edm_insomnia /= edm_countt;
+    printf("Média de insônia para o gênero EDM: %.2f\n", media_edm_insomnia);
+}
+
+if (hiphop_countt > 0) {
+    media_hiphop_insomnia /= hiphop_countt;
+    printf("Média de insônia para o gênero Hip hop: %.2f\n", media_hiphop_insomnia);
+}
+
+if (pop_countt > 0) {
+    media_pop_insomnia /= pop_countt;
+    printf("Média de insônia para o gênero Pop: %.2f\n", media_pop_insomnia);
+}
+
+if (rap_countt > 0) {
+    media_rap_insomnia /= rap_countt;
+    printf("Média de insônia para o gênero Rap: %.2f\n", media_rap_insomnia);
+}
+
+if (classical_countt > 0) {
+    media_classical_insomnia /= classical_countt;
+    printf("Média de insônia para o gênero Classical: %.2f\n", media_classical_insomnia);
+}
+
+if (metal_countt > 0) {
+    media_metal_insomnia /= metal_countt;
+    printf("Média de insônia para o gênero Metal: %.2f\n", media_metal_insomnia);
+}
+
+if (folk_countt > 0) {
+    media_folk_insomnia /= folk_countt;
+    printf("Média de insônia para o gênero Folk: %.2f\n", media_folk_insomnia);
+}
+
+if (lofi_countt > 0) {
+    media_lofi_insomnia /= lofi_countt;
+    printf("Média de insônia para o gênero Lofi: %.2f\n", media_lofi_insomnia);
+}
+
+if (gospel_countt > 0) {
+    media_gospel_insomnia /= gospel_countt;
+    printf("Média de insônia para o gênero Gospel: %.2f\n", media_gospel_insomnia);
+}
  return 0;
 }
