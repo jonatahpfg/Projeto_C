@@ -907,7 +907,125 @@ if (lofi_countt > 0) {
 if (gospel_countt > 0) {
     media_gospel_insomnia /= gospel_countt;
     printf("Média de insônia para o gênero Gospel: %.2f\n", media_gospel_insomnia);
-}  
+}
+
+
+float somaClassical = 0, somaCountry = 0, somaEDM = 0, somaFolk = 0, somaGospel = 0, somaHipHop = 0;
+  float somaJazz = 0, somaKpop = 0, somaLatin = 0, somaLofi = 0, somaMetal = 0, somaPop = 0;
+  float somaRB = 0, somaRap = 0, somaRock = 0, somaVGM = 0;
+  int countClassical = 0, countCountry = 0, countEDM = 0, countFolk = 0, countGospel = 0, countHipHop = 0;
+  int countJazz = 0, countKpop = 0, countLatin = 0, countLofi = 0, countMetal = 0, countPop = 0;
+  int countRB = 0, countRap = 0, countRock = 0, countVGM = 0;
+
+  for (int i = 0; i < numLinhas; i++) {
+    if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
+      somaClassical += dados[i]->bpm;
+      countClassical++;
+    } else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+      somaCountry += dados[i]->bpm;
+      countCountry++;
+    } else if (strcmp(dados[i]->fav_genre, "EDM") == 0) {
+      somaEDM += dados[i]->bpm;
+      countEDM++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
+      somaRock += dados[i]->bpm;
+      countRock++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Folk") == 0) {
+      somaFolk += dados[i]->bpm;
+      countFolk++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
+      somaGospel += dados[i]->bpm;
+      countGospel++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
+      somaHipHop += dados[i]->bpm;
+      countHipHop++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+      somaCountry += dados[i]->bpm;
+      countCountry++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
+      somaJazz += dados[i]->bpm;
+      countJazz++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
+      somaKpop += dados[i]->bpm;
+      countKpop++;
+    }
+    else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
+      somaLatin += dados[i]->bpm;
+      countLatin++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Lofi") == 0) {
+      somaLofi += dados[i]->bpm;
+      countLofi++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Metal") == 0) {
+      somaMetal += dados[i]->bpm;
+      countMetal++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "R&B") == 0) {
+      somaRB += dados[i]->bpm;
+      countRB++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
+      somaPop += dados[i]->bpm;
+      countPop++;  
+    }
+     else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
+      somaRap += dados[i]->bpm;
+      countRap++;
+    }
+     else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
+    if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300) {
+      somaVGM += dados[i]->bpm;
+      countVGM++;
+    }
+    }
+  }
+
+  
+  float mediaClassical = somaClassical / countClassical;
+  float mediaCountry = somaCountry / countCountry;
+  float mediaEDM = somaEDM / countEDM;
+  float mediaFolk = somaFolk / countFolk;
+  float mediaGospel = somaGospel / countGospel;
+  float mediaHipHop = somaHipHop / countHipHop;
+  float mediaJazz = somaJazz / countJazz;
+  float mediaKpop = somaKpop / countKpop;
+  float mediaLatin = somaLatin / countLatin;
+  float mediaLofi = somaLofi / countLofi;
+  float mediaMetal = somaMetal / countMetal;
+  float mediaPop = somaPop / countPop;
+  float mediaRB = somaRB / countRB;
+  float mediaRap = somaRap / countRap;
+  float mediaRock = somaRock / countRock;
+  float mediaVGM = somaVGM / countVGM;
+
+  printf("\n");
+  printf("Média de BPM para cada estilo musical:\n");
+  printf("Classical: %.2f\n", mediaClassical);
+  printf("Country: %.2f\n", mediaCountry);
+  printf("EDM: %.2f\n", mediaEDM);
+  printf("Folk: %.2f\n", mediaFolk);
+  printf("Gospel: %.2f\n", mediaGospel);
+  printf("Hip Hop: %.2f\n", mediaHipHop);
+  printf("Jazz: %.2f\n", mediaJazz);
+  printf("K-pop: %.2f\n", mediaKpop);
+  printf("Latin: %.2f\n", mediaLatin);
+  printf("Lo-fi: %.2f\n", mediaLofi);
+  printf("Metal: %.2f\n", mediaMetal);
+  printf("Pop: %.2f\n", mediaPop);
+  printf("R&B: %.2f\n", mediaRB);
+  printf("Rap: %.2f\n", mediaRap);
+  printf("Rock: %.2f\n", mediaRock);
+  printf("Video Game Music: %.2f\n", mediaVGM);
+
+  
 return 0;
   
 }
