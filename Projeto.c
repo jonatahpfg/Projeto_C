@@ -1025,7 +1025,175 @@ float somaClassical = 0, somaCountry = 0, somaEDM = 0, somaFolk = 0, somaGospel 
   printf("Rock: %.2f\n", mediaRock);
   printf("Video Game Music: %.2f\n", mediaVGM);
 
+
+
+
+ int numExplorers = 0; 
+  int sumExplorerAge = 0; 
+
+  int numNonExplorers = 0; 
+  int sumNonExplorerAge = 0; 
+
+  for (int i = 0; i < numLinhas; i++) {
+    if (strcmp(dados[i]->exploratory, "Yes") == 0) {
+      numExplorers++;
+      sumExplorerAge += dados[i]->age;
+    } else {
+      numNonExplorers++;
+      sumNonExplorerAge += dados[i]->age;
+    }
+  }
+
+  float avgExplorerAge = sumExplorerAge / numExplorers;
+  float avgNonExplorerAge = sumNonExplorerAge / numNonExplorers;
+
+  printf("\nMédia de idade dos grupos que exploram e não exploram novos artistas e géneros");
+  printf("\nMédia de idade dos que exploram: %.2f\n", avgExplorerAge);
+  printf("Média de idade dos que não exploram: %.2f\n", avgNonExplorerAge);
+
+
+ int countExplorers = 0; 
+  int countNonExplorers = 0; 
+
+  for (int i = 0; i < numLinhas; i++) {
+    if (strcmp(dados[i]->exploratory, "Yes") == 0) {
+      countExplorers++;
+    } else if (strcmp(dados[i]->exploratory, "No") == 0){
+      countNonExplorers++;
+    }
+  }
+
+  printf("Número de pessoas que exploram: %d\n", countExplorers);
+  printf("Número de pessoas que não exploram: %d\n", countNonExplorers);
+
+  float mediaExplorer = ((float)countExplorers / numLinhas)*100;
+  float mediaNonExplorer = ((float)countNonExplorers / numLinhas)*100;
+
+  printf("Média de quantidade de pessoas do grupo que explora: %.2f\n", mediaExplorer);
+  printf("Média de quantidade de pessoas do grupo que não explora: %.2f\n", mediaNonExplorer);
+
+int group_Explorers = 0;
+int frequenciaClassical = 0;
+int frequenciaCountry = 0;
+int frequenciaEDM = 0;
+int frequenciaFolk = 0;
+int frequenciaGospel = 0;
+int frequenciaHipHop = 0;
+int frequenciaJazz = 0;
+int frequenciaKpop = 0;
+int frequenciaLatin = 0;
+int frequenciaLofi = 0;
+int frequenciaMetal = 0;
+int frequenciaPop = 0;
+int frequenciaRB = 0;
+int frequenciaRock = 0;
+int frequenciaVideoGameMusic = 0;
+
+for (int i = 0; i < numLinhas; i++) {
+  if (strcmp(dados[i]->exploratory, "Yes") == 0) {
+    group_Explorers++;
+
+    if (strcmp(dados[i]->frequency_classical, "Very frequently") == 0 || strcmp(dados[i]->frequency_classical, "Sometimes") == 0) {
+      frequenciaClassical++;
+    }
+
+    if (strcmp(dados[i]->frequency_country, "Very frequently") == 0 || strcmp(dados[i]->frequency_country, "Sometimes") == 0) {
+      frequenciaCountry++;
+    }
+
+    if (strcmp(dados[i]->frequency_edm, "Very frequently") == 0 || strcmp(dados[i]->frequency_edm, "Sometimes") == 0) {
+      frequenciaEDM++;
+    }
+
+    if (strcmp(dados[i]->frequency_folk, "Very frequently") == 0 || strcmp(dados[i]->frequency_folk, "Sometimes") == 0) {
+      frequenciaFolk++;
+    }
+
+    if (strcmp(dados[i]->frequency_gospel, "Very frequently") == 0 || strcmp(dados[i]->frequency_gospel, "Sometimes") == 0) {
+      frequenciaGospel++;
+    }
+
+    if (strcmp(dados[i]->frequency_hip_hop, "Very frequently") == 0 || strcmp(dados[i]->frequency_hip_hop, "Sometimes") == 0) {
+      frequenciaHipHop++;
+    }
+
+    if (strcmp(dados[i]->frequency_jazz, "Very frequently") == 0 || strcmp(dados[i]->frequency_jazz, "Sometimes") == 0) {
+      frequenciaJazz++;
+    }
+
+    if (strcmp(dados[i]->frequency_kpop, "Very frequently") == 0 || strcmp(dados[i]->frequency_kpop, "Sometimes") == 0) {
+      frequenciaKpop++;
+    }
+
+    if (strcmp(dados[i]->frequency_latin, "Very frequently") == 0 || strcmp(dados[i]->frequency_latin, "Sometimes") == 0) {
+      frequenciaLatin++;
+    }
+
+    if (strcmp(dados[i]->frequency_lofi, "Very frequently") == 0 || strcmp(dados[i]->frequency_lofi, "Sometimes") == 0) {
+      frequenciaLofi++;
+    }
+
+    if (strcmp(dados[i]->frequency_metal, "Very frequently") == 0 || strcmp(dados[i]->frequency_metal, "Sometimes") == 0) {
+      frequenciaMetal++;
+    }
+
+    if (strcmp(dados[i]->frequency_pop, "Very frequently") == 0 || strcmp(dados[i]->frequency_pop, "Sometimes") ==0) {
+      frequenciaPop++;
+    }
+
+    if (strcmp(dados[i]->frequency_rb, "Very frequently") == 0 || strcmp(dados[i]->frequency_rb, "Sometimes") == 0) {
+      frequenciaRB++;
+    }
+
+    if (strcmp(dados[i]->frequency_rock, "Very frequently") == 0 || strcmp(dados[i]->frequency_rock, "Sometimes") == 0) {
+      frequenciaRock++;
+    }
+
+    if (strcmp(dados[i]->frequency_video_game_music, "Very frequently") == 0 || strcmp(dados[i]->frequency_video_game_music, "Sometimes") == 0) {
+      frequenciaVideoGameMusic++;
+    }
+  }
+}
+
   
+double porcentclassical = (float)frequenciaClassical / group_Explorers;
+double porcentcountry = (float)frequenciaCountry / group_Explorers;
+double porcentedm = (float)frequenciaEDM / group_Explorers;
+double porcentfolk = (float)frequenciaFolk / group_Explorers;
+double porcentgospel =  (float)frequenciaGospel / group_Explorers;
+double porcenthiphop = (float) frequenciaHipHop / group_Explorers;
+double porcentjazz = (float)frequenciaJazz / group_Explorers;
+double porcentkpop = (float)frequenciaKpop / group_Explorers;
+double porcentlatin = (float)frequenciaLatin / group_Explorers;
+double porcentlofi = (float)frequenciaLofi / group_Explorers;
+double porcentmetal = (float)frequenciaMetal / group_Explorers;
+double porcentpop = (float)frequenciaPop / group_Explorers;
+double porcentrb = (float)frequenciaRB / group_Explorers;
+double porcentrock = (float)frequenciaRock / group_Explorers;
+double porcentvideogamemusic = (float)frequenciaVideoGameMusic / group_Explorers;
+      
+printf("Média de pessoas que ouvem com frequência o estilo musical, em evidência o grupo que explora novos estilos e artistas:\n");
+printf("Porcentagem Classical: %.2f\n", porcentclassical);
+printf("Porcentagem Country: %.2f\n", porcentcountry);
+printf("Porcentagem EDM: %.2f\n", porcentedm);
+printf("Porcentagem Folk: %.2f\n", porcentfolk);
+printf("Porcentagem Gospel: %.2f\n", porcentgospel);
+printf("Porcentagem Hip Hop: %.2f\n", porcenthiphop);
+printf("Porcentagem Jazz: %.2f\n", porcentjazz);
+printf("Porcentagem Kpop: %.2f\n", porcentkpop);
+printf("Porcentagem Latin: %.2f\n", porcentlatin);
+printf("Porcentagem Lofi: %.2f\n", porcentlofi);
+printf("Porcentagem Metal: %.2f\n", porcentmetal);
+printf("Porcentagem Pop: %.2f\n", porcentpop);
+printf("Porcentagem R&B: %.2f\n", porcentrb);
+printf("Porcentagem Rock: %.2f\n", porcentrock);
+printf("Porcentagem Video Game Music: %.2f\n", porcentvideogamemusic);
+      
+      
 return 0;
   
 }
+
+
+
+
