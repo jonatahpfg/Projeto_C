@@ -1,0 +1,208 @@
+ make -s
+ ./main
+A média das idades é: 24.276903.
+
+Contagem do uso dos Streamings
+Spotify: 458
+Youtube Music: 93
+Apple Music: 51
+Pandora: 11
+Other streaming service: 50
+Dont use streaming service: 71
+
+Média da insônia, depressão e ansiedade para cada classificação de tempo:
+Tempo leve (até 2 horas por dia):
+- Média de insônia: 3.17
+- Média de depressão: 4.44
+- Média de ansiedade: 5.58
+Tempo mediano (mais de 2 horas e até 5 horas por dia):
+- Média de insônia: 4.12
+- Média de depressão: 5.12
+- Média de ansiedade: 6.14
+Tempo muito tempo (mais de 5 horas por dia):
+- Média de insônia: 4.35
+- Média de depressão: 5.14
+- Média de ansiedade: 5.93
+
+Depressão por gênero musical(Nível acima de 6):
+Rock: 78
+Latin: 0
+Video game music: 10
+Jazz: 8
+K pop: 9
+Country: 7
+Hip hop: 19
+Rap: 5
+Classical: 15
+Pop: 30
+Gospel: 1
+
+Insônia por gênero musical(Nível acima de 6):
+Rock: 45
+Latin: 1
+Video game music: 13
+Jazz: 7
+K pop: 5
+Country: 2
+Hip hop: 6
+Rap: 2
+Classical: 11
+Pop: 17
+Gospel: 3
+
+Ansiedade por gênero musical(Nível acima de 6):
+Rock: 106
+Latin: 1
+Video game music: 18
+Jazz: 10
+K pop: 14
+Country: 13
+Hip hop: 19
+Rap: 9
+Classical: 22
+Pop: 54
+Gospel: 1
+
+Média da ansiedade, depressão e insônia para cada classificação de efeito musical:
+No effect:
+- Média de ansiedade: 5.12
+- Média de depressão: 4.38
+- Média de insônia: 3.67
+Improve:
+- Média de ansiedade: 6.05
+- Média de depressão: 4.87
+- Média de insônia: 3.76
+Worsen:
+- Média de ansiedade: 6.76
+- Média de depressão: 7.18
+- Média de insônia: 4.53
+
+Média de tempo para cada grupo(Os que acreditam que não faz efeito, os acreditam que melhora e os que acreditam que piora.
+Sem efeito:
+- Média de tempo: 3 h 26 min
+Efeito Positivo:
+- Média de tempo: 3 h 39 min
+Efeito Negativo:
+- Média de tempo: 2 h 45 min
+
+Quantidade de usuários por gênero:
+Rock: 188
+Latin: 3
+Video game music: 44
+Jazz: 20
+K pop: 26
+Country: 25
+Hip hop: 34
+Rap: 22
+Classical: 53
+Pop: 114
+Gospel: 6
+Metal: 88
+Lofi: 10
+Folk: 30
+R&B: 35
+EDM: 37
+
+
+Média de idades por gênero:
+Rock: 28
+Latin: 17
+Video game music: 21
+Jazz: 25
+K pop: 17
+Country: 25
+Hip hop: 22
+Rap: 21
+Classical: 26
+Pop: 23
+Gospel: 55
+Metal: 25
+Lofi: 22
+Folk: 25
+R&B: 25
+EDM: 22
+
+
+Media do BPM para niveis de insonia ate 3: 121.85
+Media do BPM para niveis de insonia de 4 a 7: 126.59
+Media do BPM para niveis de insonia de 8 a 10: 123.26
+
+Média de BPM para cada estilo musical:
+Classical: 114.57
+Country: 110.19
+EDM: 133.89
+Folk: 113.92
+Gospel: 116.33
+Hip Hop: 112.35
+Jazz: 124.47
+K-pop: 128.56
+Latin: 133.67
+Lo-fi: 114.30
+Metal: 142.76
+Pop: 118.91
+R&B: 117.97
+Rap: 127.10
+Rock: 124.05
+Video Game Music: 119.75
+
+Médias de insônia de cada gênero musical: 
+Média de insônia para o gênero Rock: 3.88
+Média de insônia para o gênero Latin: 3.33
+Média de insônia para o gênero Video game music: 4.00
+Média de insônia para o gênero Jazz: 3.85
+Média de insônia para o gênero R&B: 2.89
+Média de insônia para o gênero K pop: 3.46
+Média de insônia para o gênero Country: 2.72
+Média de insônia para o gênero EDM: 3.97
+Média de insônia para o gênero Hip hop: 3.47
+Média de insônia para o gênero Pop: 3.37
+Média de insônia para o gênero Rap: 2.27
+Média de insônia para o gênero Classical: 3.79
+Média de insônia para o gênero Metal: 4.56
+Média de insônia para o gênero Folk: 3.63
+Média de insônia para o gênero Lofi: 5.60
+Média de insônia para o gênero Gospel: 5.33
+
+Média de idade dos grupos que exploram e não exploram novos artistas e géneros:
+Média de idade dos que exploram: 23.00
+Média de idade dos que não exploram: 28.00
+
+Número de pessoas que exploram: 524
+Número de pessoas que não exploram: 211
+Média de quantidade de pessoas do grupo que explora: 71.29
+Média de quantidade de pessoas do grupo que não explora: 28.71
+
+Média de pessoas que ouvem com frequência o estilo musical, em evidência o grupo que explora novos estilos e artistas:
+Porcentagem Classical: 43%
+Porcentagem Country: 22%
+Porcentagem EDM: 34%
+Porcentagem Folk: 34%
+Porcentagem Gospel: 9%
+Porcentagem Hip Hop: 52%
+Porcentagem Jazz: 35%
+Porcentagem Kpop: 23%
+Porcentagem Latin: 17%
+Porcentagem Lofi: 39%
+Porcentagem Metal: 43%
+Porcentagem Pop: 77%
+Porcentagem R&B: 45%
+Porcentagem Rock: 79%
+Porcentagem Video Game Music: 42%
+
+Médias de ansiedade por estilo de música:
+Rock: 6.12
+Latin: 4.33
+Video game music: 5.89
+Jazz: 5.90
+R&B: 5.17
+K pop: 6.23
+Country: 5.40
+EDM: 5.49
+Hip hop: 6.32
+Pop: 6.07
+Rap: 5.09
+Classical: 4.89
+Metal: 5.76
+Folk: 6.57
+Lofi: 6.10
+Gospel: 4.83
