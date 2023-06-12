@@ -538,7 +538,7 @@ printf("\nMédia de tempo para cada grupo(Os que acreditam que faz efeito, os ac
     int minutos = (int)((media_tempo_worsen - horas) * 60);
     printf("Efeito Negativo:\n- Média de tempo: %d h %02d min\n", horas, minutos);
   }
-  /*5)A IDADE PODE INFLUENCIAR NOS GOSTOS MUSICAIS*/
+  /*4)A IDADE PODE INFLUENCIAR NOS GOSTOS MUSICAIS*/
 
 int rock_idade_media = 0;
 int latin_idade_media = 0;
@@ -700,7 +700,7 @@ printf("EDM: %d\n", edm_idade_media);
 printf("\n");
 
 
-/*Parte 6, relações de BPM a insônia*/
+/*Parte 5, relações de BPM a insônia e ansiedade*/
 int cont_insomnia_menor_3 = 0, cont_insomnia_menor_7 = 0, cont_insomnia_menor_10 = 0;
 float  media_bpm_menor_3 = 0, media_bpm_menor_7 = 0, media_bpm_menor_10 = 0;
   
@@ -919,66 +919,66 @@ float somaClassical = 0, somaCountry = 0, somaEDM = 0, somaFolk = 0, somaGospel 
 
   for (int i = 0; i < numLinhas; i++) {
     if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
-      somaClassical += dados[i]->bpm;
-      countClassical++;
+     if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300) { somaClassical += dados[i]->bpm;
+      countClassical++;}
     } else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
-      somaCountry += dados[i]->bpm;
-      countCountry++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaCountry += dados[i]->bpm;
+      countCountry++;}
     } else if (strcmp(dados[i]->fav_genre, "EDM") == 0) {
-      somaEDM += dados[i]->bpm;
-      countEDM++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaEDM += dados[i]->bpm;
+      countEDM++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
-      somaRock += dados[i]->bpm;
-      countRock++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaRock += dados[i]->bpm;
+      countRock++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Folk") == 0) {
-      somaFolk += dados[i]->bpm;
-      countFolk++;
+     if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){ somaFolk += dados[i]->bpm;
+      countFolk++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
-      somaGospel += dados[i]->bpm;
-      countGospel++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){ somaGospel += dados[i]->bpm;
+      countGospel++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
-      somaHipHop += dados[i]->bpm;
-      countHipHop++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaHipHop += dados[i]->bpm;
+      countHipHop++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
-      somaCountry += dados[i]->bpm;
-      countCountry++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){ somaCountry += dados[i]->bpm;
+      countCountry++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
-      somaJazz += dados[i]->bpm;
-      countJazz++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaJazz += dados[i]->bpm;
+      countJazz++;}
     }
      else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
-      somaKpop += dados[i]->bpm;
-      countKpop++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaKpop += dados[i]->bpm;
+      countKpop++;}
     }
     else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
-      somaLatin += dados[i]->bpm;
-      countLatin++;
+     if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300) {somaLatin += dados[i]->bpm;
+      countLatin++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Lofi") == 0) {
-      somaLofi += dados[i]->bpm;
-      countLofi++;
+     if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300) {somaLofi += dados[i]->bpm;
+      countLofi++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Metal") == 0) {
-      somaMetal += dados[i]->bpm;
-      countMetal++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaMetal += dados[i]->bpm;
+      countMetal++;}
     }
      else if (strcmp(dados[i]->fav_genre, "R&B") == 0) {
-      somaRB += dados[i]->bpm;
-      countRB++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaRB += dados[i]->bpm;
+      countRB++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
-      somaPop += dados[i]->bpm;
-      countPop++;  
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){somaPop += dados[i]->bpm;
+      countPop++;}  
     }
      else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
-      somaRap += dados[i]->bpm;
-      countRap++;
+      if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300){ somaRap += dados[i]->bpm;
+      countRap++;}
     }
      else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
     if (dados[i]->bpm >= 20 && dados[i]->bpm <= 300) {
@@ -1188,12 +1188,149 @@ printf("Porcentagem Pop: %.2f\n", porcentpop);
 printf("Porcentagem R&B: %.2f\n", porcentrb);
 printf("Porcentagem Rock: %.2f\n", porcentrock);
 printf("Porcentagem Video Game Music: %.2f\n", porcentvideogamemusic);
-      
-      
-return 0;
-  
+
+
+
+float media_rock_anxiety = 0, media_latin_anxiety = 0, media_vgm_anxiety = 0, media_jazz_anxiety = 0;
+float media_rb_anxiety = 0, media_kpop_anxiety = 0, media_country_anxiety = 0, media_edm_anxiety = 0;
+float media_hiphop_anxiety = 0, media_rap_anxiety = 0, media_pop_anxiety = 0, media_classical_anxiety = 0;
+float media_metal_anxiety = 0, media_folk_anxiety = 0, media_lofi_anxiety = 0, media_gospel_anxiety = 0;
+
+int rock_counttt = 0;
+int latin_counttt = 0;
+int vgm_counttt = 0;
+int jazz_counttt = 0;
+int kpop_counttt = 0;
+int country_counttt = 0;
+int hiphop_counttt = 0;
+int rap_counttt = 0;
+int classical_counttt = 0;
+int pop_counttt = 0;
+int gospel_counttt = 0;
+int  folk_counttt = 0;
+int  rb_counttt = 0;
+int edm_counttt = 0;
+int metal_counttt = 0;
+int lofi_counttt = 0;
+
+for (int i = 0; i < numLinhas; i++) {
+  if (strcmp(dados[i]->fav_genre, "Rock") == 0) {
+    media_rock_anxiety += dados[i]->anxiety;
+    rock_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Latin") == 0) {
+    media_latin_anxiety += dados[i]->anxiety;
+    latin_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Video game music") == 0) {
+    media_vgm_anxiety += dados[i]->anxiety;
+    vgm_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Jazz") == 0) {
+    media_jazz_anxiety += dados[i]->anxiety;
+    jazz_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "R&B") == 0) {
+    media_rb_anxiety += dados[i]->anxiety;
+    rb_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "K pop") == 0) {
+    media_kpop_anxiety += dados[i]->anxiety;
+    kpop_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Country") == 0) {
+    media_country_anxiety += dados[i]->anxiety;
+    country_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "EDM") == 0) {
+    media_edm_anxiety += dados[i]->anxiety;
+    edm_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Hip hop") == 0) {
+    media_hiphop_anxiety += dados[i]->anxiety;
+    hiphop_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Pop") == 0) {
+    media_pop_anxiety += dados[i]->anxiety;
+    pop_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Rap") == 0) {
+  media_rap_anxiety += dados[i]->anxiety;
+    rap_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Classical") == 0) {
+    media_classical_anxiety += dados[i]->anxiety;
+    classical_counttt++;
+  } 
+  else if (strcmp(dados[i]->fav_genre, "Metal") == 0) {
+    media_metal_anxiety += dados[i]->anxiety;
+    metal_counttt++;
+  }
+  else if (strcmp(dados[i]->fav_genre, "Folk") == 0) {
+    media_folk_anxiety += dados[i]->anxiety;
+    folk_counttt++;
+  }
+  else if (strcmp(dados[i]->fav_genre, "Lofi") == 0) {
+    media_lofi_anxiety += dados[i]->anxiety;
+    lofi_counttt++;
+  }
+  else if (strcmp(dados[i]->fav_genre, "Gospel") == 0) {
+    media_gospel_anxiety += dados[i]->anxiety;
+    gospel_counttt++;
+  }
 }
 
+// Calcular as médias
+if (rock_countt > 0)
+  media_rock_anxiety /= rock_counttt;
+if (latin_countt > 0)
+  media_latin_anxiety /= latin_counttt;
+if (vgm_countt > 0)
+  media_vgm_anxiety /= vgm_counttt;
+if (jazz_countt > 0)
+  media_jazz_anxiety /= jazz_counttt;
+if (rb_countt > 0)
+  media_rb_anxiety /= rb_counttt;
+if (kpop_countt > 0)
+  media_kpop_anxiety /= kpop_counttt;
+if (country_countt > 0)
+  media_country_anxiety /= country_counttt;
+if (edm_countt > 0)
+  media_edm_anxiety /= edm_counttt;
+if (hiphop_countt > 0)
+  media_hiphop_anxiety /= hiphop_counttt;
+if (pop_countt > 0)
+  media_pop_anxiety /= pop_counttt;
+if (rap_countt > 0)
+  media_rap_anxiety /= rap_counttt;
+if (classical_countt > 0)
+  media_classical_anxiety /= classical_countt;
+if (metal_countt > 0)
+  media_metal_anxiety /= metal_counttt;
+if (folk_countt > 0)
+  media_folk_anxiety /= folk_counttt;
+if (lofi_countt > 0)
+  media_lofi_anxiety /= lofi_counttt;
+if (gospel_countt > 0)
+  media_gospel_anxiety /= gospel_counttt;
 
+printf("\nMédias de ansiedade por estilo de música:\n");
+printf("Rock: %.2f\n", media_rock_anxiety);
+printf("Latin: %.2f\n", media_latin_anxiety);
+printf("Video game music: %.2f\n", media_vgm_anxiety);
+printf("Jazz: %.2f\n", media_jazz_anxiety);
+printf("R&B: %.2f\n", media_rb_anxiety);
+printf("K pop: %.2f\n", media_kpop_anxiety);
+printf("Country: %.2f\n", media_country_anxiety);
+printf("EDM: %.2f\n", media_edm_anxiety);
+printf("Hip hop: %.2f\n", media_hiphop_anxiety);
+printf("Pop: %.2f\n", media_pop_anxiety);
+printf("Rap: %.2f\n", media_rap_anxiety);
+printf("Classical: %.2f\n", media_classical_anxiety);
+printf("Metal: %.2f\n", media_metal_anxiety);
+printf("Folk: %.2f\n", media_folk_anxiety);
+printf("Lofi: %.2f\n", media_lofi_anxiety);
+printf("Gospel: %.2f\n", media_gospel_anxiety);
 
-
+  return 0; 
+}
